@@ -17,6 +17,8 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
 
+	<script src="//cdn.jsdelivr.net/npm/phaser@3.7.1/dist/phaser.min.js"></script>
+
 
 
 
@@ -27,7 +29,47 @@
 </head>
 <body>
 
+	<script type="text/javascript">
 
+	var config = {
+		type: Phaser.AUTO,
+		width: 800,
+		height: 600,
+		scene: {
+			preload: preload,
+			create: create,
+			update: update
+		}
+	};
+
+	var game = new Phaser.Game(config);
+
+	function preload ()
+	{
+		this.load.image('sky', 'assets/sky.png');
+		this.load.image('ground', 'assets/platform.png');
+		this.load.image('star', 'assets/star.png');
+		this.load.image('bomb', 'assets/bomb.png');
+		this.load.spritesheet('dude', 'assets/dude.png',
+		{ frameWidth: 32, frameHeight: 48 }
+	);
+}
+
+function create ()
+{
+	this.add.image(400, 300, 'sky');
+
+
+}
+
+function update ()
+{
+}
+
+</script>
+
+
+<div class="game-area"></div>
 
 	<header>
 		<h1 id="name" class="left">Dave Noriega</h1>
@@ -38,15 +80,13 @@
 			<li><a href="https://github.com/dnori817" target= "_blank">Github</a></li>
 		</ul>
 
-		<!-- <ul id="menu">
-      <a href="assets/David-Noriega-Resume-2018.pdf" class="menu-item"><li>Resume</li></a>
-      <a href="#portfolio" class="menu-item"><li>Portfolio</li></a>
-			<a href="index.html" class="menu-item current-page"><li>About</li></a>
-		</ul> -->
 	</header>
 	<div class="section-title center">
 		<h1 id="title" class="center">Full Stack Web Developer</h1>
 	</div>
+
+
+
 
 	<!-- <div class="parallax-container">
 		<div class="parallax">
